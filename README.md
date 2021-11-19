@@ -13,6 +13,10 @@ composer.jsonに以下を追加
 }
 ```
 
+以下コマンド実施
+
+> composer update
+
 yamlファイルを以下のように作成する
 
 ```yaml
