@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Artisan;
 /**
  * インターフェースと実装クラスを作成します。
  * 引数は/で指定します。
- * 例: artisan command:createdifile App/Domain/Service/TestService.php
+ * 例: artisan command:cdf App/Domain/Service/TestService.php
  * 
  * オプションによってProviderクラスも作成します。
  * オプションによってconfig/app.phpのProviderにProviderクラスの登録も行います。→多分無理
@@ -20,7 +20,7 @@ class CreateDependencyInjectionFile extends Command
      *
      * @var string
      */
-    protected $signature = 'command:createdifile {filepath} {--p} ';
+    protected $signature = 'command:cdf {filepath} {--p} ';
 
     /**
      * The console command description.
@@ -72,7 +72,7 @@ class CreateDependencyInjectionFile extends Command
             $codePath = substr_replace($codePath,"A",0,1);
         }
 
-        $text = "<?php" . "\n" 
+        $iftext = "<?php" . "\n" 
             . "namespace " . $codePath . ";" . "\n" 
             . "interface " . $fileName . " {" . "\n"
             . "}";
@@ -84,7 +84,7 @@ class CreateDependencyInjectionFile extends Command
             . "}";
         
         // インターフェースの作成
-        file_put_contents($folderPath . "/" . $fileName . ".php", $text, LOCK_EX);
+        file_put_contents($folderPath . "/" . $fileName . ".php", $iftext, LOCK_EX);
 
         // 実装ファイルの作成
         file_put_contents($folderPath . "/Impl" . "/" . $fileName . "Impl.php", $implText, LOCK_EX);

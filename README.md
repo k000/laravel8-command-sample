@@ -1,3 +1,14 @@
+# CreateDependencyInjectionFile
+
+DIに必要となるインターフェースとその実装クラスを作成します
+--p オプションでmake:providerのコマンドを発火して作成します。
+
+> artisan command:cdf app/Domain/Service/TestService --p
+
+コマンドcdfの後はインターフェースのファイルをフォルダのパスを含めて指定します
+拡張子は不要です。
+
+
 # InsertDataCommand
 
 yamlファイルを基にテーブルに対して簡易的にレコードの作成を行います。
