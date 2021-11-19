@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
-use Symfony\Component\Translation\Loader\YamlFileLoader;
 
 class InsertDataCommand extends Command
 {
