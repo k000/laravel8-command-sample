@@ -1,3 +1,40 @@
+# InsertDataCommand
+
+yamlファイルを基にテーブルに対して簡易的にレコードの作成を行います。
+
+[使い方]
+
+composer.jsonに以下を追加
+
+```json
+"require": {
+    // 省略,
+    "symfony/yaml": "^5.3"
+}
+```
+
+yamlファイルを以下のように作成する
+
+```yaml
+table: talents
+data:
+  - 
+    name: sato takasi
+    age: 36
+  -
+    name: tanaka takesi
+    age: 44
+```
+
+以下にyamファイルを作成する。
+database\insertdata\filename.yaml
+
+コマンドを実行する
+> command:insertdata {filename}
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
