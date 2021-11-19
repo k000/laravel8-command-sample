@@ -92,7 +92,7 @@ class CreateDependencyInjectionFile extends Command
         // オプションの有無によってはサービスプロバイダ作成コマンドを実行する
         if($this->option("p"))
         {
-            echo "ok!";
+            Artisan::call("make:provider" . " " . $fileName . "ServiceProvider");
         }
 
         // 引数の内容によってはconfig.app.phpにサービスプロバイダを登録する
